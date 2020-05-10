@@ -14,14 +14,14 @@ if [ "$1" = "stop" ]; then
     
 elif [ "$1" = "status" ]; then
     if [ ! -f $STATUS_FILE ]; then
-        echo "[INACTIVE] You are not protected."
+        echo "[inactive] You are not protected."
     else
         read -r IP_ON_STARTUP<$STATUS_FILE
         CURRENT_IP=`wget $IP_ECHO_URL -O - -q ; echo`
         if [ "$CURRENT_IP" = "$IP_ON_STARTUP" ]; then
-            echo "[ACTIVE] You are protected: ${CURRENT_IP}"
+            echo "[active] You are protected: ${CURRENT_IP}"
         else
-            echo "[INACTIVE] You are not protected."
+            echo "[inactive] You are not protected."
         fi
     fi
     
@@ -50,11 +50,11 @@ elif [ "$1" = "start" ]; then
         touch $STATUS_FILE
         echo $NEW_IP >> $STATUS_FILE
     else
-        echo "[ERROR] Failed to start VPN"
+        echo "[error] Failed to start VPN"
         echo "Please retry"
     fi
     
 else
-    echo "[ERROR] Unknown command"
+    echo "[error] Unknown command"
     
 fi
