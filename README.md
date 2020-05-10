@@ -4,7 +4,7 @@ A simple bash script to easily start, stop and check status of the OpenVPN clien
 ## Installation
 1. Clone or download the repository.
 2. Change `CONFIG_FILE` to be your .ovpn config file.
-3. (Optional) Create an alias in you .bashrc. Example: `alias vpn="~/Scripts/vpn.sh"`
+3. (Optional) Create an alias in you .bashrc. Example: `alias vpn="sudo ~/Scripts/openvpn-launcher/vpn.sh"`
 
 ## Usage
 
