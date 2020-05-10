@@ -3,7 +3,8 @@
 # Replace with your own .ovpn config file path.
 CONFIG_FILE="/etc/openvpn/ovpn_udp/us5038.nordvpn.com.udp.ovpn"
 
-STATUS_FILE="$HOME/.vpn-status.tmp"
+CURRENT_USER=$(logname)
+STATUS_FILE="/tmp/vpn-status-${CURRENT_USER}"
 IP_ECHO_URL="http://ipecho.net/plain"
 
 if [ "$1" = "stop" ]; then
